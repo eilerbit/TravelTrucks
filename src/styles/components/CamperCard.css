@@ -1,0 +1,143 @@
+/* General styles */
+.camper-card {
+  display: flex;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.camper-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.camper-image {
+  width: 292px;
+  height: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.card-content {
+  flex: 1;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header section */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-black);
+}
+
+.card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.heart-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.heart-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Rating and location */
+.rating-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--color-gray);
+  margin-bottom: 12px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Description */
+.description {
+  font-size: 14px;
+  color: var(--color-gray-dark);
+  margin-bottom: 16px;
+}
+
+/* Features section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.feature-icon {
+  padding: 6px 12px;
+  background-color: var(--color-gray-light);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Actions */
+.card-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.show-more {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more:hover {
+  background-color: var(--color-button-hover);
+}

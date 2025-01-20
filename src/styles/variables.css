@@ -1,0 +1,32 @@
+/* variables.css */
+
+:root {
+  /* Colors */
+  --color-main: #e44848; /* Main red color */
+  --color-accent: #ffc531; /* Accent yellow color */
+  --color-gray-light: #f2f4f7; /* Light gray background */
+  --color-gray: #6c757d; /* Gray text */
+  --color-white: #ffffff; /* White color */
+  --color-black: #101828; /* Black text */
+  --color-button-hover: #db4343;
+
+  /* Typography */
+  --font-body: "Inter", sans-serif; /* Replace with actual font family */
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-body-small: 0.875rem;
+
+  /* Spacing */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 1.5rem;
+
+  /* Radius */
+  --border-radius: 8px;
+
+  /* Shadow */
+  --shadow-default: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}

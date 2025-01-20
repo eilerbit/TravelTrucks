@@ -1,0 +1,47 @@
+@import "./variables.css";
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-black);
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-gray-light);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-medium);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-small);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-small);
+}
+
+p {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--spacing-small);
+  line-height: 1.5;
+}
+
+button {
+  font-size: var(--font-size-body);
+  color: var(--color-white);
+  background-color: var(--color-main);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-small) var(--spacing-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-default);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-button-hover);
+  box-shadow: var(--shadow-hover);
+}

@@ -1,0 +1,21 @@
+.tabs {
+  display: flex;
+  justify-content: flex-start; /* Align tabs to the left */
+  gap: var(--spacing-medium); /* Add space between tabs */
+  border-bottom: 2px solid var(--color-gray-light);
+  margin-bottom: var(--spacing-medium);
+}
+
+.tab {
+  padding: var(--spacing-small) var(--spacing-medium);
+  cursor: pointer;
+  color: var(--color-gray);
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tab.active {
+  color: var(--color-main);
+  border-bottom-color: var(--color-main);
+}

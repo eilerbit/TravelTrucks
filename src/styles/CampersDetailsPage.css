@@ -1,0 +1,17 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* Responsive grid */
+  gap: 16px; /* Spacing between images */
+  margin-bottom: 24px; /* Space below the gallery */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for images */
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
