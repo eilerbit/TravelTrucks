@@ -12,8 +12,8 @@ import ACIcon from "../assets/icons/AC.svg";
 import BathroomIcon from "../assets/icons/bathroom.svg";
 import KitchenIcon from "../assets/icons/kitchen.svg";
 import TVIcon from "../assets/icons/TV.svg";
-import RadioIcon from "../assets/icons/radio.svg";
-import VanIcon from "../assets/icons/van.svg";
+import TransmissionIcon from "../assets/icons/transmission.svg";
+import VanIcon from "../assets/icons/panelTruck.svg";
 import FullyIntegratedIcon from "../assets/icons/fullyIntegrated.svg";
 import AlcoveIcon from "../assets/icons/alcove.svg";
 
@@ -22,15 +22,15 @@ const ICONS = {
   bathroom: BathroomIcon,
   kitchen: KitchenIcon,
   TV: TVIcon,
-  radio: RadioIcon,
-  van: VanIcon,
+  automatic: TransmissionIcon,
+  panelTruck: VanIcon,
   fullyIntegrated: FullyIntegratedIcon,
   alcove: AlcoveIcon,
 };
 
 const FilterBar = () => {
   const dispatch = useDispatch();
-  const { location, type, features } = useSelector((state) => state.filters);
+  const { location, form, features } = useSelector((state) => state.filters);
 
   const handleClearFilters = () => {
     dispatch(clearFilters());
@@ -41,7 +41,7 @@ const FilterBar = () => {
       <div className="filter-section">
         <label htmlFor="location">Location</label>
         <input
-          type="text"
+          form="text"
           id="location"
           placeholder="Kyiv, Ukraine"
           value={location}
@@ -53,7 +53,7 @@ const FilterBar = () => {
         <h4>Filters</h4>
         <h5>Vehicle equipment</h5>
         <div className="filter-group">
-          {["AC", "bathroom", "kitchen", "TV", "radio"].map((feature) => (
+          {["AC", "bathroom", "kitchen", "TV", "automatic"].map((feature) => (
             <button
               key={feature}
               className={`filter-btn ${
@@ -70,13 +70,13 @@ const FilterBar = () => {
         <h5>Vehicle type</h5>
         <div className="filter-group">
           {[
-            { label: "Van", value: "van" },
+            { label: "Van", value: "panelTruck" },
             { label: "Fully Integrated", value: "fullyIntegrated" },
             { label: "Alcove", value: "alcove" },
           ].map(({ label, value }) => (
             <button
               key={value}
-              className={`filter-btn ${type === value ? "active" : ""}`}
+              className={`filter-btn ${form === value ? "active" : ""}`}
               onClick={() => dispatch(setType(value))}
             >
               <img src={ICONS[value]} alt={label} className="filter-icon" />

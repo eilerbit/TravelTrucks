@@ -4,7 +4,7 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     location: "",
-    type: "",
+    form: "",
     features: [],
   },
   reducers: {
@@ -12,7 +12,7 @@ const filtersSlice = createSlice({
       state.location = action.payload;
     },
     setType(state, action) {
-      state.type = action.payload;
+      state.form = action.payload;
     },
     toggleFeature(state, action) {
       const feature = action.payload;
@@ -24,7 +24,7 @@ const filtersSlice = createSlice({
     },
     clearFilters(state) {
       state.location = "";
-      state.type = "";
+      state.form = "";
       state.features = [];
     },
   },

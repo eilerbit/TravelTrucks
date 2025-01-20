@@ -11,16 +11,16 @@ const CatalogPage = () => {
   const { list, status, total, currentPage } = useSelector(
     (state) => state.campers
   );
-  const { location, type, features } = useSelector((state) => state.filters);
+  const { location, form, features } = useSelector((state) => state.filters);
   const [loadingMore, setLoadingMore] = useState(false);
   const itemsPerPage = 4;
 
   useEffect(() => {
     dispatch(resetCampers());
     dispatch(
-      fetchCampers({ page: 1, limit: itemsPerPage, location, type, features })
+      fetchCampers({ page: 1, limit: itemsPerPage, location, form, features })
     );
-  }, [dispatch, location, type, features]);
+  }, [dispatch, location, form, features]);
 
   const handleLoadMore = () => {
     setLoadingMore(true);
@@ -29,7 +29,7 @@ const CatalogPage = () => {
         page: currentPage + 1,
         limit: itemsPerPage,
         location,
-        type,
+        form,
         features,
       })
     ).finally(() => setLoadingMore(false));
