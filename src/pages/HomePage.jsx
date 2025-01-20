@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/HomePage.css";
 
 const HomePage = () => {
@@ -8,9 +8,9 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Campers of your dreams</h1>
           <p>You can find everything you want in our catalog</p>
-          <a href="/catalog" className="hero-button">
+          <Link to="/catalog" className="hero-button">
             View Now
-          </a>
+          </Link>
         </div>
       </header>
     </div>
