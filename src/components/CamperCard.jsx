@@ -1,15 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../redux/slices/favoritesSlice";
 import { formatPrice } from "../utils/helpers";
+import HeartIcon from "./HeartIcon";
 import "../styles/components/CamperCard.css";
 
-import heart from "../assets/icons/heart.svg";
-import locationIcon from "../assets/icons/location.svg"; // Add location icon
-import starIcon from "../assets/icons/star.svg"; // Add star icon for rating
+import locationIcon from "../assets/icons/location.svg";
+import starIcon from "../assets/icons/star.svg";
 
 const CamperCard = ({ camper }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.items);
+  const isFavorite = favorites.some((item) => item.id === camper.id);
+
+  const toggleFavorite = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (isFavorite) {
+      dispatch(removeItem(camper));
+    } else {
+      dispatch(addItem(camper));
+    }
+  };
+
   return (
-    <div className="camper-card">
+    <article className="camper-card">
       <img
         src={camper.gallery[0]?.thumb}
         alt={camper.name}
@@ -20,7 +36,17 @@ const CamperCard = ({ camper }) => {
           <h3>{camper.name}</h3>
           <div className="card-header-right">
             <h3>{formatPrice(camper.price)}</h3>
-            <img src={heart} alt="Heart Icon" className="heart-icon" />
+            <button
+              className="heart-button"
+              onClick={toggleFavorite}
+              aria-label={
+                isFavorite ? "Remove from favorites" : "Add to favorites"
+              }
+            >
+              <HeartIcon
+                className={`heart-icon ${isFavorite ? "favorite" : ""}`}
+              />
+            </button>
           </div>
         </div>
 
@@ -47,13 +73,13 @@ const CamperCard = ({ camper }) => {
             : camper.description}
         </p>
 
-        <div className="features">
+        <ul className="features-list" aria-label="Camper features">
           {["Automatic", "Petrol", "Kitchen", "AC"].map((feature, idx) => (
-            <div key={idx} className="feature-icon">
+            <li key={idx} className="feature-item">
               {feature}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="card-actions">
           <Link to={`/catalog/${camper.id}`} className="show-more">
@@ -61,7 +87,7 @@ const CamperCard = ({ camper }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
