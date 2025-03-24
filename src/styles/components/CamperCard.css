@@ -49,16 +49,30 @@
   gap: 12px;
 }
 
-.heart-icon {
-  width: 20px;
-  height: 20px;
+.heart-button {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+  color: #6c757d;
 }
 
 .heart-icon:hover {
   transform: scale(1.1);
-  filter: brightness(1.2);
+}
+
+.heart-icon.favorite {
+  color: #e44848;
+  fill: currentColor;
 }
 
 /* Rating and location */
@@ -101,23 +115,24 @@
 }
 
 /* Features section */
-.features {
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 16px;
 }
 
-.feature-icon {
-  padding: 6px 12px;
+.feature-item {
   background-color: var(--color-gray-light);
-  border-radius: 8px;
+  padding: 6px 12px;
+  border-radius: 16px;
   font-size: 14px;
-  color: var(--color-black);
+  color: var(--color-gray);
   display: flex;
   align-items: center;
-  justify-content: center;
-  white-space: nowrap;
+  gap: 6px;
 }
 
 /* Actions */
